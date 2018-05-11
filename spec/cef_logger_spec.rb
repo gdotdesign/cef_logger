@@ -16,7 +16,7 @@ describe CefLogger do
   let(:logger) { TestLogger }
 
   before do
-    # allow(Syslog::Logger).to receive(:new).and_return(logger)
+    allow(Syslog::Logger).to receive(:new).and_return(logger)
     allow(SecureRandom).to receive(:uuid).and_return('id')
 
     CefLogger.version = '1.0.0'
