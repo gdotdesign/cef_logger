@@ -4,7 +4,7 @@ require 'singleton'
 
 class CefLogger
   class << self
-    attr_accessor :product, :vendor, :version
+    attr_accessor :product, :vendor, :version, :program
 
     def log(name: '', severity: 0, data: {})
       id =
@@ -54,7 +54,7 @@ class CefLogger
     end
 
     def logger
-      @logger ||= Syslog::Logger.new 'protectme'
+      @logger ||= Syslog::Logger.new program
     end
   end
 end

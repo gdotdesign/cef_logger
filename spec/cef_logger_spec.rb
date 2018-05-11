@@ -16,7 +16,7 @@ describe CefLogger do
   let(:logger) { TestLogger }
 
   before do
-    allow(Syslog::Logger).to receive(:new).and_return(logger)
+    # allow(Syslog::Logger).to receive(:new).and_return(logger)
     allow(SecureRandom).to receive(:uuid).and_return('id')
 
     CefLogger.version = '1.0.0'
@@ -57,6 +57,6 @@ describe CefLogger do
   it 'raises for non hash data' do
     expect do
       CefLogger.log(name: 'Event', data: '')
-    end.to raise_error("Can't compile non hashes as extensions for CEF logging!")
+    end.to raise_error("Can't compile non-hashes as extensions for CEF logging!")
   end
 end
