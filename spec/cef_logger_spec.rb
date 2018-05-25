@@ -22,6 +22,7 @@ describe CefLogger do
     CefLogger.version = '1.0.0'
     CefLogger.product = 'Test'
     CefLogger.vendor = 'Test'
+    CefLogger.facility = 10
   end
 
   it 'escapes pipes in the header' do
