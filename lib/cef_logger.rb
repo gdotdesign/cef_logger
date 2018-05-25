@@ -6,7 +6,7 @@ class CefLogger
   class << self
     attr_accessor :product, :vendor, :version, :program, :facility
 
-    def log(name: '', severity: 0, data: {})
+    def log(name: '', severity: 6, data: {})
       id =
         SecureRandom.uuid
 
