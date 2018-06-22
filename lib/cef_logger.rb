@@ -4,7 +4,8 @@ require 'singleton'
 
 class CefLogger
   class << self
-    attr_accessor :product, :vendor, :version, :program, :facility
+    attr_accessor :product, :vendor, :version, :program, :facility,
+                  :filtered_keys
 
     def log(name: '', severity: 6, data: {})
       id =
@@ -46,6 +47,7 @@ class CefLogger
       case data
       when Hash
         data
+          .reject { |key,| filtered_keys.to_a.map(&:to_s).include?(key.to_s) }
           .map { |key, value| "#{key}=#{escape_value(value)}" }
           .join(' ')
       else
