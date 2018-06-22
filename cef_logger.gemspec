@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'cef_logger'
-  s.version     = '1.3.0'
+  s.version     = '1.4.0'
   s.authors     = ['Szikszai Gusztáv']
   s.email       = 'guszti5@hotmail.com'
   s.homepage    = 'https://github.com/gdotdesign/cef_logger'
